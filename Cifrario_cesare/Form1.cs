@@ -19,20 +19,55 @@ namespace Cifrario_cesare
 
         private void btn_n1_Click(object sender, EventArgs e)
         {
-            string parola;
-            int parola2=0;
-
-            parola=txt_n1.Text;
-
-            parola2=int.Parse(parola);
-
-            parola2 = parola2  + 3 ;
-
-            parola =parola.ToString();
-
-            MessageBox.Show(parola);
-
+            string parola, parolaF = " ";
+            int parola2 = 0,chiave=0;
             
+            parola =txt_parola1.Text;
+            parola = parola.ToUpper();
+            chiave = int.Parse(txt_chiave1.Text);
+            for (int i = 0; i <parola.Length; i++) 
+            {
+
+                parola2 = Convert.ToInt32(parola[i]);
+                parola2 = parola2 + chiave;
+
+                if (parola2 > 90)
+                {
+                    parola2 = parola2 - 26;
+                }
+                parola2=Convert.ToChar(parola2);
+                parolaF = parolaF + Convert.ToChar(parola2);
+            }
+            
+            lbl_risultato.Text =parolaF.ToLower();
+          
+
+        }
+
+        private void btn_n2_Click(object sender, EventArgs e)
+        {
+            string parola, parolaF = " ";
+            int parola2 = 0, chiave = 0;
+
+            parola = txt_parola2.Text;
+            parola = parola.ToUpper();
+            chiave = int.Parse(txt_chiave2.Text);
+            for (int i = 0; i < parola.Length; i++)
+            {
+
+                parola2 = Convert.ToInt32(parola[i]);
+                parola2 = parola2 - chiave;
+
+                if (parola2 < 65 )
+                {
+                    parola2 = parola2 + 26;
+                }
+                parola2 = Convert.ToChar(parola2);
+                parolaF = parolaF + Convert.ToChar(parola2);
+            }
+
+            lbl_risultato2.Text = parolaF.ToLower();
+
         }
     }
 }
