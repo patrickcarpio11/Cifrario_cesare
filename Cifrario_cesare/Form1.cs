@@ -21,18 +21,28 @@ namespace Cifrario_cesare
         {
             string parola;
             int parola2=0;
+           
+            parola = txt_n1.Text;
+           
+            for (int i = 0; i < parola.Length; i++)
+            {
 
-            parola=txt_n1.Text;
+                parola2 = int.Parse(parola);
 
-            parola2=int.Parse(parola);
 
-            parola2 = parola2  + 3 ;
+                parola2 = parola2 + 3;
 
-            parola =parola.ToString();
+                parola = parola.ToString();
 
-            MessageBox.Show(parola);
+                MessageBox.Show(parola);
+
+
+
+            }
 
             
         }
+
+       
     }
 }
