@@ -19,8 +19,32 @@ namespace Cifrario_cesare
 
         private void btn_n1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            string parola;
+            int parola2=0;
+           
+            parola = txt_n1.Text;
+           
+            for (int i = 0; i < parola.Length; i++)
+            {
+
+                parola2 = int.Parse(parola);
+
+
+                parola2 = parola2 + 3;
+
+                parola = parola.ToString();
+
+                MessageBox.Show(parola);
+
+
+
+            }
+
+=======
             string parola, parolaF = " ";
             int parola2 = 0,chiave=0;
+>>>>>>> b474676f0373a726a83b11eb57f41212a6fc2daf
             
             parola =txt_parola1.Text;
             parola = parola.ToUpper();
@@ -70,6 +94,7 @@ namespace Cifrario_cesare
 
         }
 
+<<<<<<< HEAD
         private void btn_invio3_Click(object sender, EventArgs e)
         {
             string parola, parolaF = " ",chiave;
@@ -80,12 +105,36 @@ namespace Cifrario_cesare
             chiave = txt_chiave3.Text;
             chiave=chiave.ToUpper();
             chiaveN = Convert.ToInt32(chiave);
+=======
+        private void txt_parola1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_invio5_Click(object sender, EventArgs e)
+        {
+            string parola, parolaF = " ";
+            int parola2 = 0;
+
+            parola = txt_parola5.Text;
+            parola = parola.ToUpper();
+          
+>>>>>>> ecaeab568ea4e4becfd4b0fba9f2874cb3770890
             for (int i = 0; i < parola.Length; i++)
             {
 
                 parola2 = Convert.ToInt32(parola[i]);
+<<<<<<< HEAD
               
                 parola2 = parola2 + chiaveN;
+=======
+                parola2 = parola2 + 3;
+>>>>>>> ecaeab568ea4e4becfd4b0fba9f2874cb3770890
 
                 if (parola2 > 90)
                 {
@@ -95,6 +144,7 @@ namespace Cifrario_cesare
                 parolaF = parolaF + Convert.ToChar(parola2);
             }
 
+<<<<<<< HEAD
             lbl_risultato.Text = parolaF.ToLower();
 
         }
@@ -103,5 +153,37 @@ namespace Cifrario_cesare
         {
 
         }
+=======
+            lbl_risultato5.Text = parolaF.ToLower();
+        }
+
+        private void btn_invio6_Click(object sender, EventArgs e)
+        {
+            string parola, parolaF = " ";
+            int parola2 = 0;
+
+            parola = txt_parola6.Text;
+            parola = parola.ToUpper();
+           
+            for (int i = 0; i < parola.Length; i++)
+            {
+
+                parola2 = Convert.ToInt32(parola[i]);
+                parola2 = parola2 - 3;
+
+                if (parola2 < 65)
+                {
+                    parola2 = parola2 + 26;
+                }
+                parola2 = Convert.ToChar(parola2);
+                parolaF = parolaF + Convert.ToChar(parola2);
+            }
+
+            lbl_risultato6.Text = parolaF.ToLower();
+
+        }
+
+       
+>>>>>>> ecaeab568ea4e4becfd4b0fba9f2874cb3770890
     }
 }
